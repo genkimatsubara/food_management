@@ -1,2 +1,22 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>商品一覧</h1>
+<%= link_to '商品登録', new_product_path, class:"btn btn-primary" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">商品名</th>
+      <th scope="col">賞味期限</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, edit_product_path(product) %></td>
+        <td><%= product.deadline %></td>
+        <td>
+            <%= link_to '編集', edit_product_path(product), class: 'btn btn-primary mr-3'%>
+            <%= link_to '削除', product, method: :delete, remote: true, data: { confirm: "「#{product.name}」を削除をします。よろしいですか？"}, class: 'btn btn-danger delete'%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -3,6 +3,7 @@ class NoticeMailer < ApplicationMailer
   
   def send_notice_deadline
     @product = params[:product]
+    @foods = Food.where('title like ?',"%#{@product.name}%").order("RANDOM()").limit(4)
     mail(
       subject: '期限',
       to: @product.user.email,

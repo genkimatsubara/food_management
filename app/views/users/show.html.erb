@@ -1,3 +1,16 @@
-<h1>プロフィール</h1>
-<%= @user.id %>, <%= @user.name %>, <%= @user.email %><br>
-<%= @user.created_at %>, <%= @user.updated_at %><br>
+<section class="fdb-block py-0">
+  <div class="container bg-r py-5 my-5" style="background-image: url(/images/1.svg);">
+    <div class="row py-5">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
+        <h1>プロフィール</h1>
+        <p class="lead">
+          ユーザー名<%= @user.name %><br>
+          <%= @user.email %>
+        </p>
+        <p class="mt-4">
+          <%= link_to '編集', edit_user_path, class:"btn btn-primary"%>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

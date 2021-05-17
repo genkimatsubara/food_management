@@ -27,9 +27,12 @@ class ProductsController < ApplicationController
   end
   
   def update
-    @product.update(product_params)
-    flash[:success] = "#{@product.name}を更新しました。"
-    redirect_to products_path
+    if @product.update(product_params)
+      flash[:success] = "#{@product.name}を更新しました。"
+      redirect_to products_path
+    else
+      render :edit
+    end
   end
   
   def destroy

@@ -1,18 +1,33 @@
-<h1>ログイン</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with scope: :session, local: true  do |f| %>
-      <div class = 'form-group'>
-        <%= f.label 'メールアドレス' %>
-        <%= f.email_field :email, class: 'form-control', id: 'user_email' %>
+<section class="fdb-block" style="background-image: url(/images/blue.svg);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
+        <div class="fdb-box">
+          <div class="row">
+            <div class="col">
+              <h1>ログイン</h1>
+            </div>
+          </div>
+          <%= form_with scope: :session, local: true  do |f| %>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.email_field :email, class:"form-control", placeholder:"Email" %>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.password_field :password, class:"form-control mb-1", placeholder:"Password" %>
+                <p class="text-right"><a href="#">Recover Password</a></p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.submit 'ログイン', class: 'btn btn-outline-secondary' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class = 'form-group'>
-        <%= f.label 'パスワード' %>
-        <%= f.password_field :password, class: 'form-control', id: 'user_password' %>
-      </div>
-      <%= f.submit 'ログイン', class: 'btn btn-primary' %>
-    <% end %>
-    <br>ユーザー登録されていない方は<%= link_to 'こちら', new_user_path %><br>
-    パスワードをお忘れの方は<%= link_to 'こちら', '#' %>
+    </div>
   </div>
-</div>
+</section>

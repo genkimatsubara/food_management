@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :is_login?, {only: [:new, :create]}
+  #ログイン中のユーザーはログイン画面にアクセスできない
   def new
   end
   def create

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   #ログインしているのかを確かめる
   before_action :ensure_correct_user, {only: [:show, :edit, :update]}
   #ユーザーの編集ができるのはそのユーザー自身だけにする
+  before_action :is_login?, {only: [:new, :create]}
+  #ログイン中のユーザーは新規登録画面にアクセスできない
   before_action :set_user, {only: [:show, :edit, :update]}
   # 共通部分
   def new

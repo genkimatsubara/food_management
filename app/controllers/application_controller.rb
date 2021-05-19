@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+  
+  def is_login?
+    if @current_user 
+      flash[:success] = "すでにログインしています"
+      redirect_to products_path
+    end
+  end
 end

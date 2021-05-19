@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :autheniticate_user,{only:[:index,:show,:edit,:update]}
+  #ログインしているのかを確かめる
   def new
     @user = User.new
   end

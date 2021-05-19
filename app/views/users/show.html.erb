@@ -8,9 +8,11 @@
           ユーザー名<%= @user.name %><br>
           <%= @user.email %>
         </p>
-        <p class="mt-4">
-          <%= link_to '編集', edit_user_path, class:"btn btn-primary"%>
-        </p>
+        <% if @current_user.id == @user.id %>
+          <p class="mt-4">
+            <%= link_to '編集', edit_user_path, class:"btn btn-primary"%>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

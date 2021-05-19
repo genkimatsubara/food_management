@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user, {only:[:new, :create, :edit, :update, :destroy]}
+  before_action :autheniticate_user, {only:[:new, :create, :edit, :update, :destroy]}
   #ログインしているのかを確かめる
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   

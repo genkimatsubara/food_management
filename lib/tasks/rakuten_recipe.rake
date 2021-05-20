@@ -6,7 +6,7 @@ namespace :rakuten_recipe do
       recipes = category.ranking
       recipes.each do |recipe|
         Food.create(title: recipe.title, image: recipe.food_image_url, url: recipe.url, description: recipe.description)
-        sleep(2)
+        sleep(1)
       end
     end
   end

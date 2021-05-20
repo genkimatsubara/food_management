@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>ProductApp</title>
+    <% if Rails.env.production? >
+      <%= render 'layouts/google_analytics' %>
     <%= render 'shared/rails_default' %>
   </head>
 

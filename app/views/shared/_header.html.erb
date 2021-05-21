@@ -1,9 +1,9 @@
 <header>
   <div class="container">
     <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#">
-        <img src="/images/logo.png" height="30" alt="image">
-      </a>
+      <%= link_to root_path, class:"navbar-brand" do %>
+        <%= image_tag "/images/twitter_header_photo_1.png", height:"40", alt:"image", width:"250" %>
+      <% end %>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

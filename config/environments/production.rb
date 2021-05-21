@@ -102,4 +102,6 @@ Rails.application.configure do
       password:             ENV['GMAIL_PASSWORD'],
       authentication:        :plain
   }
+  
+  GA.tracker = "G-Z9JZ9YHS2G"
 end

@@ -17,3 +17,7 @@ https://food-managementman.herokuapp.com/
  Ruby 2.6.7<br>
  Ruby on Rails 5.2.6<br>
  PostgreSQL　13.3<br>
+ 
+ # 改善予定機能
+ - 自動削除
+ - 検索範囲
